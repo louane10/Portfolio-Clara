@@ -1,0 +1,118 @@
+@import "../../app.scss";
+
+:root {
+  --accent: #e49723;
+}
+
+.carousel-container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px 0;
+}
+
+/* Swiper core */
+.swiper {
+  width: min(1100px, 86vw);
+  padding: 16px 0 28px;
+}
+.swiper-slide {
+  display: grid;
+  place-items: center;
+  transition: transform .28s ease;
+}
+
+/* Slide button for a11y (focus ring) */
+.slide-btn {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: 12px;
+  overflow: hidden;
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 14px 36px -24px rgba(0,0,0,0.9);
+
+  &:focus-visible {
+    box-shadow:
+      0 0 0 2px #000,
+      0 0 0 4px var(--accent);
+  }
+}
+
+.carousel-image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(.9);
+  transition: transform .28s ease, filter .28s ease;
+}
+.swiper-slide:hover .carousel-image {
+  transform: scale(1.03);
+  filter: brightness(1);
+}
+
+/* Nav */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--accent) !important;
+}
+
+/* ===== Lightbox ===== */
+.ac-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.82);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: clamp(8px, 2vw, 20px);
+}
+
+.ac-lightbox-inner {
+  position: relative;
+  width: min(96vw, 1400px);
+  height: min(92svh, 92vh);
+  display: grid;
+  place-items: center;
+}
+
+.ac-image {
+  max-width: 96vw;
+  max-height: 90svh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 10px;
+  background: #0c0c0c;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 20px 60px -24px rgba(0,0,0,0.9);
+}
+
+.ac-close {
+  position: absolute;
+  top: 8px; right: 8px;
+  appearance: none;
+  border: 0;
+  width: 36px; height: 36px;
+  line-height: 1;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #fff;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.14);
+  cursor: pointer;
+  transition: background-color .15s ease, transform .15s ease;
+}
+.ac-close:hover { background: rgba(0,0,0,0.6); transform: translateY(-1px); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-image { height: 54vw; } /* ratio plus souple mobile */
+}

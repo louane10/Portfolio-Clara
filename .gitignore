@@ -1,0 +1,27 @@
+# Dépendances
+node_modules/
+
+# Builds
+dist/
+build/
+.out/
+.next/
+
+# Vercel / tooling
+.vercel/
+coverage/
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Env (ne JAMAIS commiter de secrets)
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
