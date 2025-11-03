@@ -49,19 +49,22 @@
     display: grid;
     place-items: center;
 
-    .video-frame {
-      width: 100%;
-      height: 100%;
-      display: grid;
-      place-items: center;
-      background: #000;
-      aspect-ratio: 4 / 5; /* ratio éditorial; s’adapte en responsive */
-    }
+.video-frame {
+  width: 100%;
+  /* hauteur responsive : min 420px, prends 65vh, max 820px */
+  height: clamp(420px, 65vh, 820px);
+  background: #000;
+  /* on retire l’aspect-ratio fixe qui forçait le recadrage */
+  /* aspect-ratio: 4 / 5;  // <- supprime */
+  display: grid;
+  place-items: center;
+}
 
     video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+       width: 100%;
+  height: 100%;
+  object-fit: contain;     
+  object-position: center center;
     }
   }
 
