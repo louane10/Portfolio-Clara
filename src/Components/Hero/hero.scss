@@ -147,10 +147,12 @@
 }
 @media (max-width: 768px) {
   .hero { min-height: 520px; }
+   .hero-bg { background: url("/SITE INTERNET/PHOTOS/SHOOTINGS/ROW STUDIO6 16052025.webp") center/cover no-repeat;}
   .hero-content { transform: translateY(-2vh); text-align: left; }
 }
 @media (max-width: 480px) {
   .hero-content { transform: none; }
+  .hero-bg { background: url("/SITE INTERNET/PHOTOS/SHOOTINGS/ROW STUDIO6 16052025.webp") center/cover no-repeat;}
 }
 
 /* Accessibility: reduced motion */
