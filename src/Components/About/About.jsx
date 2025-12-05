@@ -118,8 +118,6 @@ const About = () => {
             <Link
           to="/univers"
           className="btn primary"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           Voir mon travail
         </Link>
