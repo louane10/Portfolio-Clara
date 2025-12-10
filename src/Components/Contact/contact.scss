@@ -51,8 +51,9 @@
 
 .video-frame {
   width: 100%;
+  aspect-ratio: 9 / 16;
   /* hauteur responsive : min 420px, prends 65vh, max 820px */
-  height: clamp(420px, 65vh, 820px);
+  height: clamp(520px, 70vh, 960px);
   background: #000;
   /* on retire l’aspect-ratio fixe qui forçait le recadrage */
   /* aspect-ratio: 4 / 5;  // <- supprime */
@@ -236,6 +237,11 @@
 
     .contact-glow { height: 48vh; filter: blur(18px); }
   }
+}
+
+@media (max-width: 900px) {
+  .formContainer { grid-template-columns: 1fr; }
+  .video-frame { aspect-ratio: 3 / 4; height: clamp(420px, 60vh, 820px); }
 }
 
 /* ====== Mobile (≤ 768px) ====== */
